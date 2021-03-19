@@ -1,4 +1,5 @@
 import 'package:ecommerce/PinPut.dart';
+import 'package:ecommerce/constant.dart';
 import 'package:ecommerce/screen_login//login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:regexpattern/regexpattern.dart';
@@ -156,7 +157,7 @@ class RegisterScreenState extends State<RegisterScreen> {
                           labelText: 'Username',
                           prefixIcon: Icon(
                             Icons.person,
-                            color: Colors.deepPurple,
+                            color: SecondColor,
                           ),
                           labelStyle: TextStyle(fontSize: 15)),
                       autofocus: true,
@@ -182,7 +183,7 @@ class RegisterScreenState extends State<RegisterScreen> {
                           labelText: 'Phone',
                           prefixIcon: Icon(
                             Icons.phone,
-                            color: Colors.deepPurple,
+                            color: SecondColor,
                           ),
                           labelStyle: TextStyle(fontSize: 15)),
                       autofocus: true,
@@ -210,7 +211,7 @@ class RegisterScreenState extends State<RegisterScreen> {
                           labelText: 'Email Address',
                           prefixIcon: Icon(
                             Icons.email,
-                            color: Colors.deepPurple,
+                            color: SecondColor,
                           ),
                           labelStyle: TextStyle(fontSize: 15)),
                       validator: (value) {
@@ -232,7 +233,7 @@ class RegisterScreenState extends State<RegisterScreen> {
                           labelText: 'Password',
                           prefixIcon: Icon(
                             Icons.lock_outline,
-                            color: Colors.deepPurple,
+                            color: SecondColor,
                           ),
                           labelStyle: TextStyle(fontSize: 15)),
                       validator: (value) {
@@ -273,7 +274,7 @@ class RegisterScreenState extends State<RegisterScreen> {
                     padding: const EdgeInsets.all(8.0),
                     child: RoundedButton(
                       text: "SIGN IN",
-                      color: Colors.deepPurple[700],
+                      color: SecondColor,
                       textColor: Colors.white,
                       press: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>Pin_Put()));

@@ -1,4 +1,5 @@
 
+import 'package:ecommerce/constant.dart';
 import 'package:ecommerce/screen_login/home_screen.dart';
 import 'package:ecommerce/screen_login/signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -111,7 +112,7 @@ class LoginScreenState extends State<LoginScreen> {
                             labelText: 'Email Address',
                             prefixIcon: Icon(
                               Icons.email,
-                              color: Colors.deepPurple[700],
+                              color: SecondColor,
                             ),
                             labelStyle: TextStyle(fontSize: 15)),
                       ),
@@ -133,7 +134,7 @@ class LoginScreenState extends State<LoginScreen> {
                             labelText: 'Password',
                             prefixIcon: Icon(
                               Icons.lock_outline,
-                              color: Colors.deepPurple[700],
+                              color: SecondColor,
                             ),
                             labelStyle: TextStyle(fontSize: 15)),
                       ),
@@ -143,7 +144,7 @@ class LoginScreenState extends State<LoginScreen> {
                       child: RoundedButton(
                         //size: size.width*0.6,
                         text: "SIGN IN",
-                        color: Colors.deepPurple[700],
+                        color: SecondColor,
                         textColor: Colors.white,
                         press: () {
                            Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
@@ -185,7 +186,7 @@ class LoginScreenState extends State<LoginScreen> {
                                   text: " sign up",
                                   style: TextStyle(
                                     fontFamily: 'SFUIDisplay',
-                                    color: Colors.blueAccent,
+                                    color: SecondColor,
                                     fontSize: 15,
                                   ))
                             ]),

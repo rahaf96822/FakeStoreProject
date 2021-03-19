@@ -1,3 +1,4 @@
+import 'package:ecommerce/constant.dart';
 import 'package:ecommerce/screen_login/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,7 +16,7 @@ class PinPutTestState extends State<PinPutTest> {
 
   BoxDecoration get _pinPutDecoration {
     return BoxDecoration(
-      border: Border.all(color: Colors.lightBlue[400]),
+      border: Border.all(color: Colors.purple[400]),
       borderRadius: BorderRadius.circular(15.0),
     );
   }
@@ -50,7 +51,7 @@ class PinPutTestState extends State<PinPutTest> {
                     followingFieldDecoration: _pinPutDecoration.copyWith(
                       borderRadius: BorderRadius.circular(5.0),
                       border: Border.all(
-                        color: Colors.lightBlue[400].withOpacity(.5),
+                        color: Colors.purple[400].withOpacity(.5),
                       ),
                     ),
                   ),
@@ -104,9 +105,9 @@ class _Screen3State extends State<Pin_Put> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue[400],
+        backgroundColor: FirstColor,
         elevation: 5.0,
-        shadowColor: Colors.blue[200],
+        shadowColor: Colors.purple[200],
         title: Text('Confirmation Code', style: TextStyle(fontSize: 20 , color: Colors.white , fontWeight: FontWeight.bold),),
         leading: Icon(Icons.arrow_back , color: Colors.white,),
       ),

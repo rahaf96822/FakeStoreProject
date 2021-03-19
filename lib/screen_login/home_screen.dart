@@ -1,10 +1,11 @@
-import 'package:ecommerce/ChangePassword.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/settings/ChangePassword.dart';
 import 'package:ecommerce/MyActivities.dart';
 import 'package:ecommerce/MyPurchases.dart';
 import 'package:ecommerce/My_Cart.dart';
+import 'package:ecommerce/settings/page_settings.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
+import 'package:ecommerce/constant.dart';
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -35,7 +36,8 @@ class _HomeScreenState extends State<HomeScreen> {
       //length: tabTextList.length,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.deepPurple[700],
+          backgroundColor: FirstColor,
+          shadowColor: Colors.purple[200],
           title: Text("Product by categories" , style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold , fontSize: 24),),
 
           bottom: TabBar(
@@ -59,23 +61,23 @@ class _HomeScreenState extends State<HomeScreen> {
               Container(
                 width: double.infinity,
                 height: size.height*0.3,
-                color: Colors.deepPurple[50],
+                color: SecondColor,
                 child: Center(
                   child: Image.asset("images/welcome5.png"),
                 ),
               ),
               ListTile(
-                leading: Icon(Icons.settings,color: Colors.deepPurple[700]),
+                leading: Icon(Icons.settings,color: SecondColor),
                 title: Text("Setting"),
                 onTap: (){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ChangePassword()),
+                    MaterialPageRoute(builder: (context) => PageSettings()),
                   );
                 },
               ),
               ListTile(
-                leading: Icon(Icons.add_shopping_cart,color: Colors.deepPurple[700]),
+                leading: Icon(Icons.add_shopping_cart,color: SecondColor),
                 title: Text("My Cart"),
                 onTap: (){
                   Navigator.push(
@@ -85,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.assignment_returned,color: Colors.deepPurple[700]),
+                leading: Icon(Icons.assignment_returned,color: SecondColor),
                 title: Text("My Purchases"),
                 onTap: (){
                   Navigator.push(
@@ -95,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.article,color: Colors.deepPurple[700]),
+                leading: Icon(Icons.article,color: SecondColor),
                 title: Text("My Activities"),
                 onTap: (){
                   Navigator.push(
@@ -105,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.warning_rounded,color: Colors.deepPurple[700],),
+                leading: Icon(Icons.warning_rounded,color: SecondColor,),
                 title: Text("About"),
                 onTap: null,
               ),

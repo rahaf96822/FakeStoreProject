@@ -1,3 +1,4 @@
+import 'package:ecommerce/constant.dart';
 import 'package:flutter/material.dart';
 //import 'package:animated_button/animated_button.dart';
 //import 'package:ecommerce/floatanimationbutton.dart';
@@ -74,9 +75,9 @@ class _Screen9State extends State<Screen9> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue[400],
+        backgroundColor: FirstColor,
         elevation: 5.0,
-        shadowColor: Colors.blue[200],
+        shadowColor: Colors.purple[200],
         title: Text('My Cart', style: TextStyle(fontSize: 20 , color: Colors.white , fontWeight: FontWeight.bold),),
         leading: Icon(Icons.arrow_back , color: Colors.white,),
       ),
@@ -85,29 +86,17 @@ class _Screen9State extends State<Screen9> {
           itemBuilder: (BuildContext context,int index){
             return Card(
               elevation: 5.0,
-              shadowColor: Colors.blue[100],
+              shadowColor: Colors.purple[200],
               margin: EdgeInsets.all(8),
               //clipBehavior: Clip.antiAlias,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0)),
                child: Dismissible(
                   key: Key('item $_values[index]'),
-                  // background: Container(
-                  //   color: Colors.lightBlueAccent,
-                  //   child: Padding(
-                  //     padding: const EdgeInsets.all(5),
-                  //     child: Row(
-                  //       children: <Widget>[
-                  //         Icon(Icons.favorite, color: Colors.white),
-                  //         Text('Move to favorites',
-                  //             style: TextStyle(color: Colors.white)),
-                  //       ],
-                  //     ),
-                  //   ),
-                  // ),
+
 
                   background: Container(
-                    color: Colors.lightBlueAccent,
+                    color: Colors.purple[100],
                     child: Padding(
                       padding: const EdgeInsets.all(15),
                       child: Row(
@@ -164,7 +153,7 @@ class _Screen9State extends State<Screen9> {
                       //Image(image: AssetImage('images/happiness (1).jpg'), width: 75, height: 75,),
                       trailing: Checkbox(
                           value: _checked,
-                          activeColor: Colors.lightBlue[300],
+                          activeColor: Colors.purple[300],
 
                           checkColor: Colors.white,
                           onChanged: (bool _checked){
@@ -180,10 +169,10 @@ class _Screen9State extends State<Screen9> {
 
           }),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.lightBlue[200],
+        backgroundColor: SecondColor,
         onPressed: _showMyDialog,
         tooltip: 'Buy',
-        child: Icon(Icons.monetization_on_outlined, color: Colors.blueGrey,),
+        child: Icon(Icons.monetization_on_outlined, color: Colors.white,),
       ),
     );
 

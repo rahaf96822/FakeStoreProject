@@ -1,7 +1,7 @@
 import 'package:ecommerce/screen_login//login_screen.dart';
 import 'package:ecommerce/screen_login//signup_screen.dart';
 import 'package:flutter/material.dart';
-
+import 'package:ecommerce/constant.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
@@ -33,7 +33,7 @@ class Body extends StatelessWidget {
           SizedBox(height: size.height*0.05,),
           RoundedButton(
             text: "SIGN IN",
-            color: Colors.deepPurple[700],
+            color: SecondColor,
             textColor: Colors.white,
             press: () {
               Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
@@ -41,7 +41,7 @@ class Body extends StatelessWidget {
           ),
           RoundedButton(
             text: "SIGN UP",
-            color: Colors.deepPurple[50],
+            color: ThirdColor,
             textColor: Colors.black,
             press: () {
               Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterScreen()));
