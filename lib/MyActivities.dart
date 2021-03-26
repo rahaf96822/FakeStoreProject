@@ -19,32 +19,35 @@ Widget build(BuildContext context) {
 
   return Scaffold(
     appBar: AppBar(
-        backgroundColor: FirstColor,
+        backgroundColor: kPrimaryColor,
         shadowColor: Colors.purple[200],
-        leading: IconButton(icon: Icon(Icons.arrow_back_rounded),
-      // onPressed: ()  {Get.to(Login());},
-    ),
-        title: Text('My Activities',style: TextStyle(fontSize: 18),),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back , color: Colors.white,),
+          onPressed: (){
+            Navigator.pop(context);
+          },
+        ),
+        title: Text('My Activities'.tr,style: TextStyle(fontSize: 18),),
     ),
     body: Padding(
       padding: const EdgeInsets.all(15.0),
         child: Column(children: [
       // Card(name: 'buy 3 products', Ico:Icons.add_to_photos,),
-            Card(name: 'Change Password', Ico:Icons.input,),
-            Card(name: 'buy 1 products', Ico:Icons.add_to_photos,),
-            Card(name: 'buy 2 products', Ico:Icons.add_to_photos,),
+            Cardd(name: 'Change Password', Ico:Icons.input,),
+            Cardd(name: 'buy 1 products', Ico:Icons.add_to_photos,),
+            Cardd(name: 'buy 2 products', Ico:Icons.add_to_photos,),
             ],),
       ),
     );
     }
     }
 
-class Card extends StatelessWidget {
+class Cardd extends StatelessWidget {
     var now = DateTime.now();
     String name;
     IconData Ico;
 
-  Card({Key key, @required this.name, @required this.Ico,}) : super(key: key);
+  Cardd({Key key, @required this.name, @required this.Ico,}) : super(key: key);
 @override
 Widget build(BuildContext context) {
     return ListTile(

@@ -1,5 +1,6 @@
+import 'package:ecommerce/components/default_button.dart';
 import 'package:ecommerce/constant.dart';
-import 'package:ecommerce/screen_login/login_screen.dart';
+import 'package:ecommerce/log%20in/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,15 +10,23 @@ class ChangePassword extends StatefulWidget {
 }
 
 class _ChangePasswordState extends State<ChangePassword> {
+  bool _passwordVisible1 =  true;
+  bool _passwordVisible2 = true;
+  bool _passwordVisible3 = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: FirstColor,
+          backgroundColor: kPrimaryColor,
           shadowColor: Colors.purple[200],
-          leading: Icon(Icons.arrow_back_rounded),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back , color: Colors.white,),
+            onPressed: (){
+              Navigator.pop(context);
+            },
+          ),
           title: Text(
-            'Change Password',
+            'Change Password'.tr,
             style: TextStyle(fontSize: 18),
           ),
         ),
@@ -29,7 +38,7 @@ class _ChangePasswordState extends State<ChangePassword> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
-                  obscureText: true,
+                  obscureText: _passwordVisible1,
                   style:
                   TextStyle(color: Colors.black, fontFamily: 'SFUIDisplay'),
                   decoration: InputDecoration(
@@ -39,10 +48,20 @@ class _ChangePasswordState extends State<ChangePassword> {
                         Icons.lock_outline,
                         color: SecondColor,
                       ),
-                      suffixIcon: Icon(
-                        Icons.remove_red_eye_outlined,
-                        color: SecondColor,
-                        size: 16,
+                      // suffixIcon: Icon(
+                      //   Icons.remove_red_eye_outlined,
+                      //   color: SecondColor,
+                      //   size: 16,
+                      // ),
+                      suffixIcon: IconButton(
+                          icon :Icon(_passwordVisible1 ? Icons.visibility_off : Icons.visibility , color: SecondColor,size: 16,),
+
+                        onPressed: (){
+                            setState(() {
+                              _passwordVisible1 =!_passwordVisible1;
+                            });
+                        },
+
                       ),
                       labelStyle: TextStyle(fontSize: 15)),
                 ),
@@ -77,15 +96,25 @@ class _ChangePasswordState extends State<ChangePassword> {
                   TextStyle(color: Colors.black, fontFamily: 'SFUIDisplay'),
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'New Password',
+                      labelText: 'New Password'.tr,
                       prefixIcon: Icon(
                         Icons.lock_outline,
                         color: SecondColor,
                       ),
-                      suffixIcon: Icon(
-                        Icons.remove_red_eye_outlined,
-                        color: SecondColor,
-                        size: 16,
+                      // suffixIcon: Icon(
+                      //   Icons.remove_red_eye_outlined,
+                      //   color: SecondColor,
+                      //   size: 16,
+                      // ),
+                      suffixIcon: IconButton(
+                        icon :Icon(_passwordVisible2 ? Icons.visibility_off : Icons.visibility , color: SecondColor,size: 16,),
+
+                        onPressed: (){
+                          setState(() {
+                            _passwordVisible2 =!_passwordVisible2;
+                          });
+                        },
+
                       ),
                       labelStyle: TextStyle(fontSize: 15)),
                 ),
@@ -120,15 +149,25 @@ class _ChangePasswordState extends State<ChangePassword> {
                   TextStyle(color: Colors.black, fontFamily: 'SFUIDisplay'),
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'Confirm Password',
+                      labelText: 'Confirm Password'.tr,
                       prefixIcon: Icon(
                         Icons.lock_outline,
                         color: SecondColor,
                       ),
-                      suffixIcon: Icon(
-                        Icons.remove_red_eye_outlined,
-                        color: SecondColor,
-                        size: 16,
+                      // suffixIcon: Icon(
+                      //   Icons.remove_red_eye_outlined,
+                      //   color: SecondColor,
+                      //   size: 16,
+                      // ),
+                      suffixIcon: IconButton(
+                        icon :Icon(_passwordVisible3 ? Icons.visibility_off : Icons.visibility , color: SecondColor,size: 16,),
+
+                        onPressed: (){
+                          setState(() {
+                            _passwordVisible3 =!_passwordVisible3;
+                          });
+                        },
+
                       ),
                       labelStyle: TextStyle(fontSize: 15)),
                 ),
@@ -157,13 +196,11 @@ class _ChangePasswordState extends State<ChangePassword> {
               // ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: RoundedButton(
+                child: DefaultButton(
                   //size: size.width*0.6,
-                  text: "Change Password",
-                  color: SecondColor,
-                  textColor: Colors.white,
+                  text: "Change Password".tr,
                   press: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+                    Navigator.pushNamed(context, SignInScreen.routeName);
                     /*if (_formKey.currentState.validate()) {
                             _formKey.currentState.save();
                             _formKey.currentState.reset();

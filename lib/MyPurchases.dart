@@ -1,3 +1,4 @@
+import 'package:ecommerce/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,13 +9,16 @@ class MyPurchases extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.purple[200],
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back_rounded),
-            onPressed: () {},
+          backgroundColor: kPrimaryColor,
+          shadowColor: Colors.purple[200],
+          leading:IconButton(
+            icon: Icon(Icons.arrow_back , color: Colors.white,),
+            onPressed: (){
+              Navigator.pop(context);
+            },
           ),
           title: Text(
-            'My Purchases',
+            'My Purchases'.tr,
             style: TextStyle(fontSize: 18),
           ),
         ),
@@ -26,7 +30,7 @@ class MyPurchases extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(
                     IconData(62538, fontFamily: 'MaterialIcons'),
-                    color: Colors.purple[200],
+                    color: SecondColor,
                   ),
                   title: Text("Total:   100\$"),
                   subtitle: Text(
@@ -42,7 +46,7 @@ class MyPurchases extends StatelessWidget {
                       62538,
                       fontFamily: 'MaterialIcons',
                     ),
-                    color: Colors.purple[200],
+                    color: SecondColor,
                   ),
                   title: Text('Total:   100\$'),
                   subtitle: Text(
@@ -55,7 +59,7 @@ class MyPurchases extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(
                     IconData(62538, fontFamily: 'MaterialIcons'),
-                    color: Colors.purple[200],
+                    color: SecondColor,
                   ),
                   title: Text('Total:   100\$'),
                   subtitle: Text(
@@ -68,7 +72,7 @@ class MyPurchases extends StatelessWidget {
           ),
         ),
         floatingActionButton: new FloatingActionButton(
-          backgroundColor: Colors.purple[200],
+          backgroundColor:SecondColor,
           onPressed: () {},
           child: new Icon(IconData(
             60269,

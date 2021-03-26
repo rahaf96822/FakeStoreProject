@@ -1,5 +1,8 @@
+import 'package:ecommerce/components/default_button.dart';
 import 'package:ecommerce/constant.dart';
-import 'package:ecommerce/screen_login/home_screen.dart';
+import 'package:ecommerce/home_screen/home_screen.dart';
+//import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/home_screen.dart';
+import 'package:ecommerce/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pinput/pin_put/pin_put.dart';
@@ -35,13 +38,13 @@ class PinPutTestState extends State<PinPutTest> {
                   padding: const EdgeInsets.all(20.0),
                   child: PinPut(
                     fieldsCount: 5,
-                    onSubmit: (String pin) {
-                      setState(() {
-                        _showSnackBar(pin, context);
-
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
-                      });
-                    },
+                    // onSubmit: (String pin) {
+                    //   setState(() {
+                    //     _showSnackBar(pin, context);
+                    //
+                    //     Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                    //   });
+                    // },
                     focusNode: _pinPutFocusNode,
                     controller: _pinPutController,
                     submittedFieldDecoration: _pinPutDecoration.copyWith(
@@ -56,6 +59,14 @@ class PinPutTestState extends State<PinPutTest> {
                     ),
                   ),
                 ),
+                DefaultButton(
+                  color: kPrimaryLightColor,
+                  text: "Continue".tr,
+                  press: () {
+                    //Navigator.pushNamed(context, RegisterScreen.routeName);
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                  },
+                )
               ],
             ),
           ),
@@ -64,24 +75,24 @@ class PinPutTestState extends State<PinPutTest> {
     );
   }
 
-  void _showSnackBar(String pin, BuildContext context) {
-    final snackBar = SnackBar(
-      duration: const Duration(seconds: 3),
-      content: Container(
-        height: 80.0,
-        child: Center(
-          child: Text(
-            'Pin Submitted. Value: $pin',
-            style: const TextStyle(fontSize: 25.0),
-          ),
-        ),
-      ),
-      backgroundColor: Colors.lightBlue[300],
-    );
-    Scaffold.of(context)
-      ..hideCurrentSnackBar()
-      ..showSnackBar(snackBar);
-  }
+  // void _showSnackBar(String pin, BuildContext context) {
+  //   final snackBar = SnackBar(
+  //     duration: const Duration(seconds: 3),
+  //     content: Container(
+  //       height: 80.0,
+  //       child: Center(
+  //         child: Text(
+  //           'Pin Submitted. Value: $pin',
+  //           style: const TextStyle(fontSize: 25.0),
+  //         ),
+  //       ),
+  //     ),
+  //     backgroundColor: Colors.lightBlue[300],
+  //   );
+  //   Scaffold.of(context)
+  //     ..hideCurrentSnackBar()
+  //     ..showSnackBar(snackBar);
+  // }
 }
 
 
@@ -105,10 +116,10 @@ class _Screen3State extends State<Pin_Put> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: FirstColor,
+        backgroundColor: kPrimaryColor,
         elevation: 5.0,
         shadowColor: Colors.purple[200],
-        title: Text('Confirmation Code', style: TextStyle(fontSize: 20 , color: Colors.white , fontWeight: FontWeight.bold),),
+        title: Text('Confirmation Code'.tr, style: TextStyle(fontSize: 20 , color: Colors.white , fontWeight: FontWeight.bold),),
         leading: Icon(Icons.arrow_back , color: Colors.white,),
       ),
 
@@ -117,14 +128,14 @@ class _Screen3State extends State<Pin_Put> {
             child: Column(
               children: [
                 Padding(padding: EdgeInsets.only(top: Get.height*0.3)),
-                Text("We sent you a verification code" , style: TextStyle(fontSize: 30 , color: Colors.black , fontWeight: FontWeight.bold),),
+                Text("We sent you a verification code".tr , style: TextStyle(fontSize: 30 , color: Colors.black , fontWeight: FontWeight.bold),),
                 Padding(padding: EdgeInsets.all(10.0)),
                 Text('14326' , style: TextStyle(fontSize: 25 , color: Colors.black , fontWeight: FontWeight.bold),),
                 Padding(padding: EdgeInsets.all(10.0)),
-                RichText(text : TextSpan(text:"You didn't receive the code?" ,
+                RichText(text : TextSpan(text:"You didn't receive the code?".tr ,
                 style: TextStyle(fontSize: 16 , color: Colors.black),
                 children: <TextSpan>[
-                  TextSpan(text: " Try new Code", style: TextStyle(fontSize:16 , color: Colors.lightBlue[400]))
+                  TextSpan(text: " Try new Code".tr, style: TextStyle(fontSize:16 , color: Colors.lightBlue[400]))
                 ]
 
                 )),

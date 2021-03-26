@@ -75,7 +75,7 @@ class _Screen9State extends State<Screen9> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: FirstColor,
+        backgroundColor: kPrimaryColor,
         elevation: 5.0,
         shadowColor: Colors.purple[200],
         title: Text('My Cart', style: TextStyle(fontSize: 20 , color: Colors.white , fontWeight: FontWeight.bold),),
