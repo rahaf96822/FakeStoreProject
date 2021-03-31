@@ -1,8 +1,10 @@
 import 'package:ecommerce/components/default_button.dart';
 import 'package:ecommerce/constant.dart';
 import 'package:ecommerce/log%20in/form_error.dart';
+import 'package:ecommerce/sign_up/signup_screen.dart';
 //import 'package:ecommerce/signup_screen.dart';
 import 'package:ecommerce/size_config.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
@@ -14,17 +16,7 @@ class ForgotPasswordScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0 ,
         brightness: Brightness.light,
-        /*title: Center(
-          child: Text("Forgot Password",
-          style: TextStyle(color: kTextColor ,
-          //fontWeight: FontWeight.bold,
-          fontSize: getProportionateScreenWidth(15)),
-          ),
-        ),
-        leading: Icon(
-          Icons.arrow_back_ios_rounded ,
-          color: Colors.black,
-        ),*/
+
       ),
       body: SizedBox(
         width: double.infinity,
@@ -166,7 +158,9 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
                             fontFamily: 'SFUIDisplay',
                             color: kPrimaryColor,
                             fontSize: 15,
-                          ))
+                          ),
+                        recognizer: new TapGestureRecognizer()..onTap = ()=> Navigator.pushNamed(context, SignUpScreen.routeName),
+                      )
                     ]),
                   ),
                   onTap: () {

@@ -9,20 +9,21 @@ import 'splash/components/splash_content.dart';
 import 'package:get/get.dart';
 
 class WelcomeScreen extends StatelessWidget {
+  //static String routeName = "/welcome_screen";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Body(),
+      body: Body1(),
     );
   }
 }
 
-class Body extends StatefulWidget {
+class Body1 extends StatefulWidget {
   @override
-  _BodyState createState() => _BodyState();
+  _Body1State createState() => _Body1State();
 }
 
-class _BodyState extends State<Body> {
+class _Body1State extends State<Body1> {
   int currentPage = 0;
   List<Map<String , String>> splashData = [
     {

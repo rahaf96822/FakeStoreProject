@@ -1,5 +1,6 @@
 import 'package:ecommerce/components/default_button.dart';
 import 'package:ecommerce/log%20in/form_error.dart';
+import 'package:ecommerce/sign_up/PinPut.dart';
 import 'package:flutter/material.dart';
 
 import 'package:ecommerce/constant.dart';
@@ -94,7 +95,11 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
               color: kPrimaryColor,
               press: () {
                 if (_formKey.currentState.validate()) {
-                  Navigator.pushNamed(context, CompleteProfileScreen.routeNamed);
+                  //Navigator.pushNamed(context, Pin_Put.routeName);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Pin_Put()),
+                  );
                 }
               },
             ),

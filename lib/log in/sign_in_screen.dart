@@ -1,13 +1,16 @@
 import 'package:ecommerce/components/default_button.dart';
 import 'package:ecommerce/constant.dart';
 import 'package:ecommerce/forget_password/forget_password_screen.dart';
+import 'package:ecommerce/home_screen/home_page.dart';
 import 'package:ecommerce/log%20in/form_error.dart';
+import 'package:ecommerce/sign_up/signup_screen.dart';
 //import 'package:ecommerce/signup_screen.dart';
 import 'package:ecommerce/size_config.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'sign_in_success.dart';
 import 'package:get/get.dart';
-import 'package:ecommerce/home_screen/home_screen.dart';
+import 'package:ecommerce/home_screen/home_page.dart';
 
 class SignInScreen extends StatefulWidget {
   static String routeName = '/sign_in';
@@ -60,28 +63,27 @@ class Body1 extends StatelessWidget {
                 SizedBox(height: SizeConfig.screenHeight * 0.08),
                 SizedBox(height: getProportionateScreenHeight(10)),
                 Center(
-                  child: GestureDetector(
-                    child: RichText(
-                      text: TextSpan(children: [
-                        TextSpan(
-                            text: "Don't have an account?".tr,
-                            style: TextStyle(
-                              fontFamily: 'SFUIDisplay',
-                              color: Colors.black,
-                              fontSize: getProportionateScreenWidth(15),
-                            )),
-                        TextSpan(
-                            text: "sign up".tr,
-                            style: TextStyle(
-                              fontFamily: 'SFUIDisplay',
-                              color: kPrimaryColor,
-                              fontSize: getProportionateScreenWidth(15),
-                            ))
-                      ]),
-                    ),
-                    onTap: () {
-                      //Navigator.pushNamed(context, RegisterScreen.routeName);
-                    },
+                  child: RichText(
+                    text: TextSpan(
+                        children: [
+                      TextSpan(
+                          text: "Don't have an account?".tr,
+                          style: TextStyle(
+                            fontFamily: 'SFUIDisplay',
+                            color: Colors.black,
+                            fontSize: getProportionateScreenWidth(15),
+                          )),
+                      TextSpan(
+                          text: "sign up".tr,
+                          style: TextStyle(
+                            fontFamily: 'SFUIDisplay',
+                            color: kPrimaryColor,
+                            fontSize: getProportionateScreenWidth(15),
+                              //recognizer: new TapGestureRecognizer()..onTap = ()=>
+                          ),
+                          recognizer: new TapGestureRecognizer()..onTap = ()=> Navigator.pushNamed(context, SignUpScreen.routeName),
+                      )
+                    ]),
                   ),
                 ),
                 SizedBox(height: getProportionateScreenHeight(30)),
@@ -244,23 +246,12 @@ class _SignFormState extends State<SignForm> {
                 _formKey.currentState.save();
                 // if all are valid then go to success screen
                 //KeyboardUtil.hideKeyboard(context);
-                Navigator.pushNamed(context, HomeScreen.routeName);
+                Navigator.pushNamed(context, HomePage.routeName);
               }
             },
           ),
           SizedBox(height: getProportionateScreenHeight(15)),
-          DefaultButton(
-            text: "SIGN UP".tr,
-            color: kPrimaryColor,
-            press: () {
-              if (_formKey.currentState.validate()) {
-                _formKey.currentState.save();
-                // if all are valid then go to success screen
-                //KeyboardUtil.hideKeyboard(context);
-                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
-              }
-            },
-          ),
+
         ],
       ),
     );

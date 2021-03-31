@@ -1,5 +1,7 @@
+import 'package:ecommerce/home_screen/components/item_card.dart';
+import 'package:ecommerce/home_screen/components/product_details.dart';
 import 'package:flutter/material.dart';
-import 'package:step_progress_indicator/step_progress_indicator.dart';
+//import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:ecommerce/http_service.dart';
 import 'package:ecommerce/constant.dart';
 import 'package:ecommerce/model/product.dart';
@@ -14,7 +16,7 @@ class _ShopCardState extends State<ShopCard> {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    //var size = MediaQuery.of(context).size;
     // double defaultSize = SizeConfig.defaultSize;
     return FutureBuilder(
       future: httpService.getProduct(),
@@ -131,18 +133,67 @@ class _ShopCardState extends State<ShopCard> {
           //   }),
           // );
 
-          return
+          return SizedBox(
+            height: (MediaQuery.of(context).size.height)-145,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: GridView.builder(
+                  physics: ScrollPhysics(),
+                  shrinkWrap: true,
+                itemCount: products.length,
+                  gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 20,
+                    crossAxisSpacing: 20,
+                    childAspectRatio: 0.70
+                  ),
+                  itemBuilder: (context , index) =>ItemCard(
+                    product: products[index],
+                  press: ()=> Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ProductDetails(product: products[index],)),
+                  ))
+                  //   return Column(
+                  //     crossAxisAlignment: CrossAxisAlignment.start,
+                  //     children: <Widget>[
+                  //       Container(
+                  //         padding: EdgeInsets.all(10),
+                  //         height: 180,
+                  //          width: 160,
+                  //         decoration: BoxDecoration(
+                  //           borderRadius: BorderRadius.circular(16),
+                  //           image: DecorationImage(
+                  //               image: NetworkImage(products[0].image),
+                  //               fit: BoxFit.cover
+                  //           ),
+                  //         ),
+                  //
+                  //       ),
+                  //       Padding(
+                  //         padding: const EdgeInsets.symmetric(vertical: 5.0),
+                  //         child: Text(products[0].title, style: TextStyle(color: Colors.black26),
+                  //         ),),
+                  //
+                  //       Text(products[0].price.toString() , style: TextStyle(fontWeight: FontWeight.bold),)
+                  //     ],
+                  //   );
+                  // }
+                  ),
+            ),
+          );
         }
-        return Center(child: CircularStepProgressIndicator(
-          totalSteps: 20,
-          currentStep: 6,
-          //padding: math.pi / 15,
-          selectedColor: Colors.cyan,
-          unselectedColor: Colors.yellowAccent,
-          selectedStepSize: 3.0,
-          unselectedStepSize: 9.0,
-          width: 100,
-        ));
+        return Center(child: CircularProgressIndicator(backgroundColor: kPrimaryColor,)
+        // CircularStepProgressIndicator(
+        //   totalSteps: 20,
+        //   currentStep: 6,
+        //   //padding: math.pi / 15,
+        //   selectedColor: kPrimaryLightColor,
+        //   unselectedColor: kPrimaryColor,
+        //   selectedStepSize: 3.0,
+        //   unselectedStepSize: 9.0,
+        //   width: 100,
+        // )
+        );
       },
     );
     // child: AspectRatio(
@@ -168,3 +219,4 @@ class _ShopCardState extends State<ShopCard> {
     // );
   }
 }
+

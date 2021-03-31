@@ -1,11 +1,14 @@
+import 'dart:math';
+
 import 'package:ecommerce/components/default_button.dart';
 import 'package:ecommerce/constant.dart';
-import 'package:ecommerce/home_screen/home_screen.dart';
+
 //import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/home_screen.dart';
-import 'package:ecommerce/home_screen/home_screen.dart';
+import 'package:ecommerce/home_screen/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pinput/pin_put/pin_put.dart';
+import 'package:random_string/random_string.dart';
 
 
 class PinPutTest extends StatefulWidget {
@@ -54,17 +57,17 @@ class PinPutTestState extends State<PinPutTest> {
                     followingFieldDecoration: _pinPutDecoration.copyWith(
                       borderRadius: BorderRadius.circular(5.0),
                       border: Border.all(
-                        color: Colors.purple[400].withOpacity(.5),
+                        color: Colors.purple.withOpacity(.6),
                       ),
                     ),
                   ),
                 ),
                 DefaultButton(
-                  color: kPrimaryLightColor,
+                  color: kPrimaryColor,
                   text: "Continue".tr,
                   press: () {
                     //Navigator.pushNamed(context, RegisterScreen.routeName);
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
                   },
                 )
               ],
@@ -97,12 +100,13 @@ class PinPutTestState extends State<PinPutTest> {
 
 
 class Pin_Put extends StatefulWidget {
+  // static String routeName = "/pin_put";
   @override
   _Screen3State createState() => _Screen3State();
 }
 
 class _Screen3State extends State<Pin_Put> {
-
+  //int _number=25;
   final TextEditingController _pinPutController = TextEditingController();
   final FocusNode _pinPutFocusNode = FocusNode();
 
@@ -130,12 +134,12 @@ class _Screen3State extends State<Pin_Put> {
                 Padding(padding: EdgeInsets.only(top: Get.height*0.3)),
                 Text("We sent you a verification code".tr , style: TextStyle(fontSize: 30 , color: Colors.black , fontWeight: FontWeight.bold),),
                 Padding(padding: EdgeInsets.all(10.0)),
-                Text('14326' , style: TextStyle(fontSize: 25 , color: Colors.black , fontWeight: FontWeight.bold),),
+                Text( randomNumeric(5) , style: TextStyle(fontSize: 25 , color: Colors.black , fontWeight: FontWeight.bold),),
                 Padding(padding: EdgeInsets.all(10.0)),
                 RichText(text : TextSpan(text:"You didn't receive the code?".tr ,
                 style: TextStyle(fontSize: 16 , color: Colors.black),
                 children: <TextSpan>[
-                  TextSpan(text: " Try new Code".tr, style: TextStyle(fontSize:16 , color: Colors.lightBlue[400]))
+                  TextSpan(text: " Try new Code".tr, style: TextStyle(fontSize:16 , color: kPrimaryColor))
                 ]
 
                 )),

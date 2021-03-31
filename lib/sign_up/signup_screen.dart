@@ -1,5 +1,5 @@
 import 'package:ecommerce/components/default_button.dart';
-import 'package:ecommerce/home_screen/home_screen.dart';
+import 'package:ecommerce/home_screen/home_page.dart';
 import 'package:ecommerce/log%20in/form_error.dart';
 import 'package:ecommerce/constant.dart';
 import 'package:ecommerce/size_config.dart';
@@ -268,7 +268,7 @@ class _SignFormState extends State<SignForm> {
                   //_formKey.currentState.save();
                   // if all are valid then go to success screen
                   //KeyboardUtil.hideKeyboard(context);
-                  Navigator.pushNamed(context, HomeScreen.routeName);
+                  Navigator.pushNamed(context, CompleteProfileScreen.routeNamed);
                 }
               },
             ),

@@ -72,7 +72,7 @@ class MyPurchases extends StatelessWidget {
           ),
         ),
         floatingActionButton: new FloatingActionButton(
-          backgroundColor:SecondColor,
+          backgroundColor: kPrimaryColor,
           onPressed: () {},
           child: new Icon(IconData(
             60269,
