@@ -140,7 +140,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: Body(),
+      body: Body()
     );
   }
 }

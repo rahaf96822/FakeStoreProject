@@ -134,7 +134,7 @@ class _ShopCardState extends State<ShopCard> {
           // );
 
           return SizedBox(
-            height: (MediaQuery.of(context).size.height)-145,
+            height: (MediaQuery.of(context).size.height)-148.8,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: GridView.builder(
@@ -182,7 +182,7 @@ class _ShopCardState extends State<ShopCard> {
             ),
           );
         }
-        return Center(child: CircularProgressIndicator(backgroundColor: kPrimaryColor,)
+        return Center(child: CircularProgressIndicator()
         // CircularStepProgressIndicator(
         //   totalSteps: 20,
         //   currentStep: 6,

@@ -3,7 +3,8 @@ import 'package:ecommerce/model/product.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:provider/provider.dart';
+import 'package:ecommerce/model/cart.dart';
 
 class ProductDetails extends StatefulWidget {
   final Product product;
@@ -15,9 +16,11 @@ class ProductDetails extends StatefulWidget {
 
 class _ProductDetailsState extends State<ProductDetails> {
   bool _isFavorited = true;
-  int _counter=0;
+  int _counter=1;
+  List myCartList = [];
   @override
   Widget build(BuildContext context) {
+    final cart = Provider.of<Cart>(context);
     return SafeArea(
       child: Scaffold(
         // appBar: AppBar(
@@ -31,7 +34,7 @@ class _ProductDetailsState extends State<ProductDetails> {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height *0.6,
+              height: MediaQuery.of(context).size.height *0.4,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(widget.product.image),
@@ -69,7 +72,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                height: MediaQuery.of(context).size.height * 0.5,
+                height: MediaQuery.of(context).size.height * 0.6,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -250,7 +253,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                   color: Colors.black
                                   //fontWeight: FontWeight.bold
                               ),),
-                              Text(widget.product.price.toString()+'\$',
+                              Text((widget.product.price * _counter).toString()+'\$',
                               style: GoogleFonts.ptSans(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -263,7 +266,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                             color: kPrimaryColor,
                             borderRadius: BorderRadius.circular(10),
                             child: InkWell(
-                              onTap: (){},
+                              onTap: (){
+                                cart.addItem(widget.product.image, widget.product.price,
+                                    widget.product.title, widget.product.id.toString());
+                              },
                               borderRadius: BorderRadius.circular(10),
                               child: Container(
                                 padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),

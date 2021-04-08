@@ -66,6 +66,9 @@ class PinPutTestState extends State<PinPutTest> {
                   color: kPrimaryColor,
                   text: "Continue".tr,
                   press: () {
+                    // if (password == confirm_password) {
+                    //
+                    // }
                     //Navigator.pushNamed(context, RegisterScreen.routeName);
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
                   },

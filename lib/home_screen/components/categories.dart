@@ -1,19 +1,26 @@
 import 'package:ecommerce/constant.dart';
+import 'package:ecommerce/model/product.dart';
 import 'package:ecommerce/size_config.dart';
 import 'package:flutter/material.dart';
 
 class Categories extends StatefulWidget {
+  Categories({Key key}) : super(key: key);
   @override
   _CategoriesState createState() => _CategoriesState();
 }
 
 class _CategoriesState extends State<Categories> {
   List<String> categories= ['Electronics' , 'Jewelery' , 'Men Clothing' , 'Women Clothing'];
-
+  @override
+  void initState() {
+    super.initState();
+  }
   int selectedIndex=0;
   @override
   Widget build(BuildContext context) {
-    return Padding(
+
+    return
+      Padding(
       padding: EdgeInsets.symmetric(
           vertical:getProportionateScreenHeight(10.0),
       ),
