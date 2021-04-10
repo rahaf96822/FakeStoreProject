@@ -1,11 +1,11 @@
-import 'package:ecommerce/constant.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
 import 'package:ecommerce/model/cart.dart';
 import 'package:ecommerce/routs.dart';
 import 'package:ecommerce/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/welcome_screen.dart';
 import 'package:get/get.dart';
-import 'package:ecommerce/translation.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/utils/translation.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
 // void main() {

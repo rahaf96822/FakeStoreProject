@@ -1,4 +1,4 @@
-import 'package:ecommerce/constant.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
 import 'package:ecommerce/sign_up/signup_screen.dart';
 //import 'package:finalfinal/signup_screen.dart';
 import 'package:ecommerce/size_config.dart';

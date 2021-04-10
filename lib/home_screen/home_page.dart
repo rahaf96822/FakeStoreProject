@@ -1,16 +1,16 @@
 import 'dart:convert';
 
-import 'package:ecommerce/MyActivities.dart';
-import 'package:ecommerce/MyPurchases.dart';
-import 'package:ecommerce/My_Cart.dart';
-import 'package:ecommerce/about.dart';
-import 'package:ecommerce/constant.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/drawer/MyActivities.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/drawer/MyPurchases.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/drawer/My_Cart.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/drawer/about.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
 import 'package:ecommerce/home_screen/categories/Electronics.dart';
 import 'package:ecommerce/home_screen/categories/Jewelery.dart';
 import 'package:ecommerce/home_screen/categories/men.dart';
 import 'package:ecommerce/home_screen/categories/woman.dart';
 
-import 'package:ecommerce/settings/page_settings.dart';
+import 'package:ecommerce/drawer/settings/page_settings.dart';
 import 'package:ecommerce/size_config.dart';
 import 'package:ecommerce/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -300,7 +300,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               ListTile(
-                leading: Icon(Icons.settings,color: Colors.deepPurple[700]),
+                leading: Icon(Icons.drawer.settings,color: Colors.deepPurple[700]),
                 title: Text("Setting"),
                 onTap: null,
               ),

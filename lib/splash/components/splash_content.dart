@@ -1,7 +1,7 @@
 import 'package:ecommerce/size_config.dart';
 import 'package:flutter/material.dart';
 
-import 'package:ecommerce/constant.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
 
 class SplashContent extends StatelessWidget {
   const SplashContent({

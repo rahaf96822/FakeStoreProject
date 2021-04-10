@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:ecommerce/api_manager/api_manager.dart';
-import 'package:ecommerce/constant.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
 import 'package:ecommerce/constants/strings.dart';
 import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/home_screen/components/grid_view.dart';
 import 'package:ecommerce/model/product.dart';

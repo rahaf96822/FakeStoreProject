@@ -1,5 +1,5 @@
 
-import 'package:ecommerce/constant.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

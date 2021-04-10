@@ -1,10 +1,10 @@
-import 'package:ecommerce/MyActivities.dart';
-import 'package:ecommerce/constant.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/drawer/MyActivities.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
 import 'package:ecommerce/controller/app_language.dart';
-import 'package:ecommerce/settings/ChangePassword.dart';
+import 'package:ecommerce/drawer/settings/ChangePassword.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ecommerce/settings/ChangeLanguage.dart';
+import 'package:ecommerce/drawer/settings/ChangeLanguage.dart';
 class PageSettings extends StatefulWidget {
   @override
   _PageSettingsState createState() => _PageSettingsState();

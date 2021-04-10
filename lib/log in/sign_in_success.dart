@@ -1,6 +1,6 @@
 import 'package:ecommerce/components/default_button.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce/constant.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
 import 'package:ecommerce/size_config.dart';
 import 'package:get/get.dart';
 class LoginSuccessScreen extends StatelessWidget {

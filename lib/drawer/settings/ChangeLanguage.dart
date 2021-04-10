@@ -1,4 +1,4 @@
-import 'package:ecommerce/constant.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
 //import 'package:ecommerce/screen_login/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
@@ -44,7 +44,8 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
               child: GetBuilder<AppLanguage>(
                 init: AppLanguage(),
                 builder: (controller){
-                  return DropdownButton(
+                  return
+                    DropdownButton(
                     items: [
                       DropdownMenuItem(child: Text('en') , value: 'en',),
                       DropdownMenuItem(child: Text('ar') , value: 'ar',),

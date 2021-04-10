@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:ecommerce/components/default_button.dart';
-import 'package:ecommerce/constant.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
 
 //import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/home_screen.dart';
 import 'package:ecommerce/home_screen/home_page.dart';

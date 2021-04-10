@@ -1,5 +1,5 @@
 import 'package:ecommerce/components/default_button.dart';
-import 'package:ecommerce/constant.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
 import 'package:ecommerce/forget_password/forget_password_screen.dart';
 import 'package:ecommerce/home_screen/home_page.dart';
 import 'package:ecommerce/log%20in/form_error.dart';

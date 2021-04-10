@@ -3,7 +3,7 @@ import 'package:ecommerce/log%20in/form_error.dart';
 import 'package:ecommerce/sign_up/PinPut.dart';
 import 'package:flutter/material.dart';
 
-import 'package:ecommerce/constant.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
 import 'package:ecommerce/size_config.dart';
 
 class CompleteProfileScreen extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:ecommerce/components/default_button.dart';
 import 'package:ecommerce/home_screen/home_page.dart';
 import 'package:ecommerce/log%20in/form_error.dart';
-import 'package:ecommerce/constant.dart';
+import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
 import 'package:ecommerce/size_config.dart';
 import 'complete_profile.dart';
 import 'package:flutter/material.dart';
