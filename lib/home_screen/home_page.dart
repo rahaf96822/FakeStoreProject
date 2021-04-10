@@ -1,10 +1,10 @@
 import 'dart:convert';
-
-import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/drawer/MyActivities.dart';
-import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/drawer/MyPurchases.dart';
-import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/drawer/My_Cart.dart';
-import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/drawer/about.dart';
-import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
+import 'package:get/get.dart';
+import 'package:ecommerce/drawer/MyActivities.dart';
+import 'package:ecommerce/drawer/MyPurchases.dart';
+import 'package:ecommerce/drawer/My_Cart.dart';
+import 'package:ecommerce/drawer/about.dart';
+import 'package:ecommerce/constants/constant.dart';
 import 'package:ecommerce/home_screen/categories/Electronics.dart';
 import 'package:ecommerce/home_screen/categories/Jewelery.dart';
 import 'package:ecommerce/home_screen/categories/men.dart';
@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         backgroundColor: kPrimaryColor,
         shadowColor: Colors.purple[200],
         elevation: 5.0,
-        title:  Text("Product by categories",
+        title:  Text("Product by categories".tr,
           style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         backgroundColor: kPrimaryColor,
         shadowColor: Colors.purple[200],
         elevation: 5.0,
-        title:  Text("Product by categories",
+        title:  Text("Product by categories".tr,
           style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
               children: <Widget>[
                 ListTile(
                   leading: Icon(Icons.settings,color: kPrimaryColor),
-                  title: Text("Setting" ,style: TextStyle (
+                  title: Text("Setting".tr ,style: TextStyle (
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                     //fontsize
@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                 ),
                 ListTile(
                   leading: Icon(Icons.add_shopping_cart,color: kPrimaryColor),
-                  title: Text("My Cart" ,style: TextStyle (
+                  title: Text("My Cart".tr ,style: TextStyle (
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                     //fontsize
@@ -142,7 +142,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                 ),
                 ListTile(
                   leading: Icon(Icons.assignment_returned,color: kPrimaryColor),
-                  title: Text("My Purchases",style: TextStyle (
+                  title: Text("My Purchases".tr,style: TextStyle (
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                     //fontsize
@@ -156,7 +156,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                 ),
                 ListTile(
                   leading: Icon(Icons.article,color: kPrimaryColor),
-                  title: Text("My Activities",style: TextStyle (
+                  title: Text("My Activities".tr,style: TextStyle (
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                     //fontsize
@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                 ),
                 ListTile(
                   leading: Icon(Icons.warning_rounded,color:kPrimaryColor,),
-                  title: Text("About",style: TextStyle (
+                  title: Text("About".tr,style: TextStyle (
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                     //fontsize
@@ -189,7 +189,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
               leading: Icon(Icons.logout ,
                 color: kPrimaryColor,
               ),
-              title: Text("Log out",style: TextStyle(
+              title: Text("Log out".tr,style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),),
@@ -217,7 +217,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                     .map(
                       (e) => Tab(
                     child: Text(
-                      e,
+                      e.tr,
                       style: TextStyle(
                         //fontFamily: 'kanit',
                          // color: kPrimaryColor,

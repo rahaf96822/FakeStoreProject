@@ -1,5 +1,5 @@
 
-import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
+import 'package:ecommerce/constants/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -32,9 +32,9 @@ Widget build(BuildContext context) {
       padding: const EdgeInsets.all(15.0),
         child: Column(children: [
       // Card(name: 'buy 3 products', Ico:Icons.add_to_photos,),
-            Cardd(name: 'Change Password', Ico:Icons.input,),
-            Cardd(name: 'buy 1 products', Ico:Icons.add_to_photos,),
-            Cardd(name: 'buy 2 products', Ico:Icons.add_to_photos,),
+            Cardd(name: 'Change Password'.tr, Ico:Icons.input,),
+            Cardd(name: 'buy 1 products'.tr, Ico:Icons.add_to_photos,),
+            Cardd(name: 'buy 2 products'.tr, Ico:Icons.add_to_photos,),
             ],),
       ),
     );

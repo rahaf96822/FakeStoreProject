@@ -1,11 +1,11 @@
-import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
+import 'package:ecommerce/constants/constant.dart';
 import 'package:ecommerce/model/product.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:ecommerce/model/cart.dart';
-
+import 'package:get/get.dart';
 class ProductDetails extends StatefulWidget {
   final Product product;
   const ProductDetails({Key key,this.product}) : super(key: key);
@@ -23,13 +23,6 @@ class _ProductDetailsState extends State<ProductDetails> {
     final cart = Provider.of<Cart>(context);
     return SafeArea(
       child: Scaffold(
-        // appBar: AppBar(
-        //   backgroundColor: kPrimaryColor,
-        //    elevation: 5.0,
-        //   shadowColor: Colors.purple[200],
-        //   title: Text('', style: TextStyle(fontSize: 20 , color: Colors.white , fontWeight: FontWeight.bold),),
-        //   leading: Icon(Icons.arrow_back , color: Colors.white,),
-        // ),
         body: Stack(
           children: [
             Container(
@@ -247,7 +240,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("Total" ,
+                              Text("Total".tr ,
                               style: GoogleFonts.ptSans(
                                   fontSize: 14,
                                   color: Colors.black
@@ -276,7 +269,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                child: Text("Add to Cart" ,
+                                child: Text("Add to Cart".tr ,
                                   style: GoogleFonts.ptSans(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,

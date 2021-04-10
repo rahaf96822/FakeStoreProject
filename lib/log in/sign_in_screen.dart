@@ -23,11 +23,13 @@ class SignInScreen extends StatefulWidget {
 class SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Background(
-          child: Body1(),
-      ),
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Background(
+            child: Body1(),
+        ),
+        ),
       ),
     );
   }
@@ -35,65 +37,64 @@ class SignInScreenState extends State<SignInScreen> {
 class Body1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: SizedBox(
-        width: double.infinity,
-        child: Padding(
-          padding:
-          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(height: SizeConfig.screenHeight * 0.04),
-                Text(
-                  "SIGN IN".tr,
-                  style: TextStyle(
-                      color: kPrimaryColor ,
-                      fontWeight: FontWeight.bold,
-                      fontSize: getProportionateScreenWidth(35)
-                  ),
+    return SizedBox(
+      width: double.infinity,
+      child: Padding(
+        padding:
+        EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: SizeConfig.screenHeight * 0.04),
+              Text(
+                "SIGN IN".tr,
+                style: TextStyle(
+                    color: kPrimaryColor ,
+                    fontWeight: FontWeight.bold,
+                    fontSize: getProportionateScreenWidth(35)
                 ),
-                SizedBox(height: SizeConfig.screenHeight * 0.01),
-                Image.asset(
-                  "assets/images/welcome4.png",
-                  height: getProportionateScreenHeight(250),
-                  width: getProportionateScreenWidth(230),
-                ),
-                SignForm(),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
-                SizedBox(height: getProportionateScreenHeight(10)),
-                Center(
-                  child: RichText(
-                    text: TextSpan(
-                        children: [
-                      TextSpan(
-                          text: "Don't have an account?".tr,
-                          style: TextStyle(
-                            fontFamily: 'SFUIDisplay',
-                            color: Colors.black,
-                            fontSize: getProportionateScreenWidth(15),
-                          )),
-                      TextSpan(
+              ),
+              SizedBox(height: SizeConfig.screenHeight * 0.01),
+              Image.asset(
+                "assets/images/welcome4.png",
+                height: getProportionateScreenHeight(250),
+                width: getProportionateScreenWidth(230),
+              ),
+              SignForm(),
+              SizedBox(height: SizeConfig.screenHeight * 0.08),
+              SizedBox(height: getProportionateScreenHeight(10)),
+              Center(
+                child: RichText(
+                  text: TextSpan(
+                      children: [
+                        TextSpan(
+                            text: "Don't have an account?".tr,
+                            style: TextStyle(
+                              fontFamily: 'SFUIDisplay',
+                              color: Colors.black,
+                              fontSize: getProportionateScreenWidth(15),
+                            )),
+                        TextSpan(
                           text: "sign up".tr,
                           style: TextStyle(
                             fontFamily: 'SFUIDisplay',
                             color: kPrimaryColor,
                             fontSize: getProportionateScreenWidth(15),
-                              //recognizer: new TapGestureRecognizer()..onTap = ()=>
+                            //recognizer: new TapGestureRecognizer()..onTap = ()=>
                           ),
                           recognizer: new TapGestureRecognizer()..onTap = ()=> Navigator.pushNamed(context, SignUpScreen.routeName),
-                      )
-                    ]),
-                  ),
+                        )
+                      ]),
                 ),
-                SizedBox(height: getProportionateScreenHeight(30)),
+              ),
+              SizedBox(height: getProportionateScreenHeight(30)),
 
-              ],
-            ),
+            ],
           ),
         ),
       ),
     );
+
   }
 }
 
@@ -158,7 +159,7 @@ class _SignFormState extends State<SignForm> {
       builder: (BuildContext context) {
         return AlertDialog(
           content: Text(
-              "Are you sure you want to exit the form? Any changes will be lost."),
+              "Are you sure you want to exit the form? Any changes will be lost.".tr),
           actions: <Widget>[
             FlatButton(
               child: Text("Cancel".tr),

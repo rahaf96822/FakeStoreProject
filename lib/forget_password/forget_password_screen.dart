@@ -1,12 +1,12 @@
 import 'package:ecommerce/components/default_button.dart';
-import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
+import 'package:ecommerce/constants/constant.dart';
 import 'package:ecommerce/log%20in/form_error.dart';
 import 'package:ecommerce/sign_up/signup_screen.dart';
 //import 'package:ecommerce/signup_screen.dart';
 import 'package:ecommerce/size_config.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 class ForgotPasswordScreen extends StatelessWidget {
   static  String routeName = '/forget_password';
   @override
@@ -26,14 +26,14 @@ class ForgotPasswordScreen extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 SizedBox(height: SizeConfig.screenHeight*0.04,),
-                Text("Forgot Password" ,
+                Text("Forgot Password".tr ,
                   style:
                   TextStyle(
                     color: Colors.black ,
                     fontWeight: FontWeight.bold ,
                     fontSize: getProportionateScreenWidth(28)),
                 ),
-                Text("Please enter your email and we will send \nyou a link to return your account" ,
+                Text("Please enter your email and we will send \nyou a link to return your account".tr ,
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: SizeConfig.screenHeight*0.1,),
@@ -103,8 +103,8 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
                   return null;
                 },
                 decoration: InputDecoration(
-                  labelText: "Email",
-                  hintText: "Enter your email",
+                  labelText: "Email Address".tr,
+                  hintText: "Enter your email".tr,
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                   contentPadding: EdgeInsets.symmetric(
                       horizontal: 42,
@@ -133,7 +133,7 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
             SizedBox(height: SizeConfig.screenHeight*0.1,),
             DefaultButton(
               //size: size.width*0.6,
-              text: "Continue",
+              text: "Continue".tr,
               press: () {
                 if (_formKey.currentState.validate()) {
                   //do some things
@@ -146,14 +146,14 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
                   child: RichText(
                     text: TextSpan(children: [
                       TextSpan(
-                          text: "Don't have an account?",
+                          text: "Don't have an account?".tr,
                           style: TextStyle(
                             fontFamily: 'SFUIDisplay',
                             color: Colors.black,
                             fontSize: 15,
                           )),
                       TextSpan(
-                          text: " sign up",
+                          text: "sign up".tr,
                           style: TextStyle(
                             fontFamily: 'SFUIDisplay',
                             color: kPrimaryColor,

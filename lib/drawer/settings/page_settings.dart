@@ -38,7 +38,7 @@ class _PageSettingsState extends State<PageSettings> {
         backgroundColor: kPrimaryColor,
         elevation: 5.0,
         shadowColor: Colors.purple[200],
-        title: Text('My Cart', style: TextStyle(fontSize: 20 , color: Colors.white , fontWeight: FontWeight.bold),),
+        title: Text('My Cart'.tr, style: TextStyle(fontSize: 20 , color: Colors.white , fontWeight: FontWeight.bold),),
         leading: IconButton(
           icon: Icon(Icons.arrow_back , color: Colors.white,),
           onPressed: (){
@@ -50,7 +50,8 @@ class _PageSettingsState extends State<PageSettings> {
         child: Column(
           children: <Widget>[
             SizedBox(height: 30.0,),
-            Text('General Settings' , style: TextStyle(color: SecondColor, fontWeight: FontWeight.bold , fontSize: 30.0) , textDirection: TextDirection.ltr, textAlign: TextAlign.start,),
+            Text('General Settings'.tr , style: TextStyle(color: SecondColor, fontWeight: FontWeight.bold , fontSize: 30.0) ,
+              textDirection: TextDirection.ltr, textAlign: TextAlign.start,),
             Padding(padding: EdgeInsets.only(top: 10.0)),
             Padding(
               padding: const EdgeInsets.all(8.0),

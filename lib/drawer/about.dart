@@ -1,6 +1,7 @@
+import 'package:ecommerce/constants/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
+import 'package:ecommerce/constants/constant.dart';
 
 class About extends StatelessWidget{
   @override
@@ -21,13 +22,13 @@ class About extends StatelessWidget{
       body: Column(
         children: [
           ListTile(
-            leading:Icon(Icons.info_outline,color: Colors.grey,) ,
-            title: Text('Version'),
+            leading:Icon(Icons.info_outline,color: kPrimaryColor,) ,
+            title: Text('Version'.tr),
             subtitle: Text('1.0'),
           ),
           ListTile(
-            leading:Icon(Icons.share_outlined,color: Colors.grey,) ,
-            title: Text('Share This app'),
+            leading:Icon(Icons.share_outlined,color: kPrimaryColor,) ,
+            title: Text('Share This app'.tr),
 
           )
         ],

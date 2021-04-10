@@ -1,9 +1,9 @@
 import 'dart:math';
 
 import 'package:ecommerce/components/default_button.dart';
-import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
+import 'package:ecommerce/constants/constant.dart';
 
-//import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/home_screen.dart';
+
 import 'package:ecommerce/home_screen/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

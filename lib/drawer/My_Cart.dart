@@ -1,8 +1,7 @@
-import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
+import 'package:ecommerce/constants/constant.dart';
 import 'package:ecommerce/model/cart.dart';
 import 'package:flutter/material.dart';
-//import 'package:animated_button/animated_button.dart';
-//import 'package:ecommerce/floatanimationbutton.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 class Screen9 extends StatefulWidget {
@@ -12,9 +11,7 @@ class Screen9 extends StatefulWidget {
 }
 
 class _Screen9State extends State<Screen9> {
-  //bool _checked = false;
-  //List<String> _values = ['One', 'Two', 'Three', 'Four'];
-  //<String> _values = ['One', 'Two', 'Three', 'Four', 'Five'];
+
   @override
   Widget build(BuildContext context) {
     Future<void> _showMyDialog() async {
@@ -36,23 +33,17 @@ class _Screen9State extends State<Screen9> {
                       padding: const EdgeInsets.fromLTRB(10, 70, 10, 10),
                       child: Column(
                         children: [
-                          Text('Success', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+                          Text('Success'.tr, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
                           SizedBox(height: 5,),
-                          Text('The products have been purchased successfully', style: TextStyle(fontSize: 18),),
+                          Text('The products have been purchased successfully'.tr, style: TextStyle(fontSize: 18),),
                           SizedBox(height: 20,),
-                          // RaisedButton(onPressed: () {
-                          //   Navigator.of(context).pop();
-                          // },
-                          //   color: Colors.lightBlueAccent,
-                          //   child: Text('Ok', style: TextStyle(color: Colors.white),),
-                          // )
                           Align(
                             alignment: Alignment.bottomRight,
                             child: FlatButton(
                               onPressed: (){
                                 Navigator.pop(context);
                               },
-                              child: Text("OK" ,style: TextStyle(color: Colors.black),),
+                              child: Text("OK".tr ,style: TextStyle(color: Colors.black),),
                             ),
                           )
                         ],
@@ -80,7 +71,7 @@ class _Screen9State extends State<Screen9> {
         backgroundColor: kPrimaryColor,
         elevation: 5.0,
         shadowColor: Colors.purple[200],
-        title: Text('My Cart', style: TextStyle(fontSize: 20 , color: Colors.white , fontWeight: FontWeight.bold),),
+        title: Text('My Cart'.tr, style: TextStyle(fontSize: 20 , color: Colors.white , fontWeight: FontWeight.bold),),
         leading: IconButton(icon:Icon(Icons.arrow_back , color: Colors.white) ,
           onPressed: (){
             Navigator.pop(context);
@@ -122,16 +113,16 @@ class _Screen9State extends State<Screen9> {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: const Text("Delete Confirmation"),
-                            content: const Text(
-                                "Are you sure you want to delete this item?"),
+                            title:  Text("Delete Confirmation".tr),
+                            content:  Text(
+                                "Are you sure you want to delete this item?".tr),
                             actions: <Widget>[
                               FlatButton(
                                   onPressed: () => Navigator.of(context).pop(true),
-                                  child: const Text("Delete")),
+                                  child:  Text("Delete".tr)),
                               FlatButton(
                                 onPressed: () => Navigator.of(context).pop(false),
-                                child: const Text("Cancel"),
+                                child:  Text("Cancel".tr),
                               ),
                             ],
                           );

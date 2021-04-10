@@ -40,7 +40,7 @@ class LoginSuccessScreen extends StatelessWidget {
           SizedBox(
             width: SizeConfig.screenHeight*0.6,
             child: DefaultButton(
-              text: "Back To Home",
+              text: "Back To Home".tr,
               press: () {} ,
             ),
           ),

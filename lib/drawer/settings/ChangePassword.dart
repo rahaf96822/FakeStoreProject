@@ -43,7 +43,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                   TextStyle(color: Colors.black, fontFamily: 'SFUIDisplay'),
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'Old Password',
+                      labelText: 'Old Password'.tr,
                       prefixIcon: Icon(
                         Icons.lock_outline,
                         color: SecondColor,

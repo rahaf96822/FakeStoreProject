@@ -1,11 +1,11 @@
 import 'package:ecommerce/components/default_button.dart';
 import 'package:ecommerce/home_screen/home_page.dart';
 import 'package:ecommerce/log%20in/form_error.dart';
-import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
+import 'package:ecommerce/constants/constant.dart';
 import 'package:ecommerce/size_config.dart';
 import 'complete_profile.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 class SignUpScreen extends StatefulWidget {
   static String routeName = '/sign_up';
 
@@ -143,7 +143,7 @@ class BodyS extends StatelessWidget {
               children: <Widget> [
                 SizedBox(height: SizeConfig.screenHeight * 0.04),
                 Text(
-                  "SIGN UP",
+                  "SIGN UP".tr,
                   style: TextStyle(
                       color: kPrimaryColor ,
                       fontWeight: FontWeight.bold,
@@ -161,7 +161,7 @@ class BodyS extends StatelessWidget {
                 SizedBox(height: SizeConfig.screenHeight * 0.08),
                 //row for social media
                 Text(
-                  "By continuing your confirm that you agree \nwith our term and condition",
+                  "By continuing your confirm that you agree \nwith our term and condition".tr,
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.08),
@@ -260,7 +260,7 @@ class _SignFormState extends State<SignForm> {
             FormError(errors: errors),
             SizedBox(height: getProportionateScreenHeight(30)),
             DefaultButton(
-              text: "Continue",
+              text: "Continue".tr,
               color: kPrimaryColor,
               press: () {
                 if (_formKey.currentState.validate()) {
@@ -299,8 +299,8 @@ class _SignFormState extends State<SignForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Email",
-        hintText: "Enter your email",
+        labelText: "Email".tr,
+        hintText: "Enter your email".tr,
         floatingLabelBehavior: FloatingLabelBehavior.always,
         contentPadding: EdgeInsets.symmetric(
             horizontal: 42,
@@ -348,8 +348,8 @@ class _SignFormState extends State<SignForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Password",
-        hintText: "Enter your password",
+        labelText: "Password".tr,
+        hintText: "Enter your password".tr,
         floatingLabelBehavior: FloatingLabelBehavior.always,
         contentPadding: EdgeInsets.symmetric(
             horizontal: 42,
@@ -393,8 +393,8 @@ class _SignFormState extends State<SignForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Confirm Password",
-        hintText: "Re-enter your password",
+        labelText: "Confirm Password".tr,
+        hintText: "Re-enter your password".tr,
         floatingLabelBehavior: FloatingLabelBehavior.always,
         contentPadding: EdgeInsets.symmetric(
             horizontal: 42,

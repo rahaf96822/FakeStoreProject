@@ -2,8 +2,8 @@ import 'package:ecommerce/components/default_button.dart';
 import 'package:ecommerce/log%20in/form_error.dart';
 import 'package:ecommerce/sign_up/PinPut.dart';
 import 'package:flutter/material.dart';
-
-import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
+import 'package:get/get.dart';
+import 'package:ecommerce/constants/constant.dart';
 import 'package:ecommerce/size_config.dart';
 
 class CompleteProfileScreen extends StatelessWidget {
@@ -22,7 +22,7 @@ class CompleteProfileScreen extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: SizeConfig.screenHeight*0.02,),
-              Text("Complete Profile" ,
+              Text("Complete Profile" .tr,
               style: TextStyle(
                   color: Colors.black ,
                   fontWeight: FontWeight.bold ,
@@ -30,13 +30,13 @@ class CompleteProfileScreen extends StatelessWidget {
               ),
               ),
               Text(
-                "Complete your details or continue \nwith social media" ,
+                "Complete your details or continue \nwith social media".tr ,
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: SizeConfig.screenHeight*0.05,),
               CompleteProfileForm(),
               SizedBox(height: getProportionateScreenHeight(30)),
-              Text("By continuing your confirm that you agree \nwith our term and condition" ,
+              Text("By continuing your confirm that you agree \nwith our term and condition".tr ,
                 textAlign: TextAlign.center,
               ),
             ],
@@ -91,7 +91,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
             FormError(errors: errors),
             SizedBox(height: getProportionateScreenHeight(30)),
             DefaultButton(
-              text: "Continue",
+              text: "Continue".tr,
               color: kPrimaryColor,
               press: () {
                 if (_formKey.currentState.validate()) {
@@ -125,8 +125,8 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "First Name",
-        hintText: "Enter your first name",
+        labelText: "First Name".tr,
+        hintText: "Enter your first name".tr,
         floatingLabelBehavior: FloatingLabelBehavior.always,
         contentPadding: EdgeInsets.symmetric(
             horizontal: 42,
@@ -154,8 +154,8 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
     return TextFormField(
       onSaved: (newValue) => lastName = newValue,
       decoration: InputDecoration(
-        labelText: "Last Name",
-        hintText: "Enter your last name",
+        labelText: "Last Name".tr,
+        hintText: "Enter your last name".tr,
         floatingLabelBehavior: FloatingLabelBehavior.always,
         contentPadding: EdgeInsets.symmetric(
             horizontal: 42,
@@ -197,8 +197,8 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Phone Number",
-        hintText: "Enter your phone number",
+        labelText: "Phone Number".tr,
+        hintText: "Enter your phone number".tr,
 
         floatingLabelBehavior: FloatingLabelBehavior.always,
         contentPadding: EdgeInsets.symmetric(
@@ -240,8 +240,8 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Address",
-        hintText: "Enter your address",
+        labelText: "Address".tr,
+        hintText: "Enter your address".tr,
 
         floatingLabelBehavior: FloatingLabelBehavior.always,
         contentPadding: EdgeInsets.symmetric(
