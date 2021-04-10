@@ -1,16 +1,20 @@
+import 'dart:convert';
+
 import 'package:ecommerce/MyActivities.dart';
 import 'package:ecommerce/MyPurchases.dart';
 import 'package:ecommerce/My_Cart.dart';
 import 'package:ecommerce/about.dart';
 import 'package:ecommerce/constant.dart';
-import 'package:ecommerce/home_screen/components/body.dart';
-import 'package:ecommerce/home_screen/components/categories.dart';
+import 'package:ecommerce/home_screen/categories/Electronics.dart';
+import 'package:ecommerce/home_screen/categories/Jewelery.dart';
+import 'package:ecommerce/home_screen/categories/men.dart';
+import 'package:ecommerce/home_screen/categories/woman.dart';
 
 import 'package:ecommerce/settings/page_settings.dart';
 import 'package:ecommerce/size_config.dart';
 import 'package:ecommerce/welcome_screen.dart';
 import 'package:flutter/material.dart';
-
+import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
   static String routeName = "/home_page";
@@ -18,11 +22,53 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
-  
+class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin{
+  int currentIndex = 0;
+  TabController _tabController;
+  int index = 0;
+  bool isLoading = true;
+  @override
+  void initState() {
+    super.initState();
+    fetchCategory();
+
+    _tabController = TabController(length: 4, vsync: this);
+  }
+
+  List<String> choices = [];
+
+  Future fetchCategory() async {
+    List<String> finalCategoryList = [];
+    http
+        .get('https://fakestoreapi.com/products/categories')
+        .then((http.Response response) async {
+      var category = await jsonDecode(response.body);
+      print(category);
+      print(category.runtimeType);
+
+      finalCategoryList = new List<String>.from(category);
+
+      print(finalCategoryList);
+      print(finalCategoryList.runtimeType);
+      for (String item in finalCategoryList) {
+        setState(() {
+          choices.add(item);
+          // isLoading = !isLoading;
+        });
+      }
+      print(choices);
+      setState(() => isLoading = false);
+    });
+  }
+
+
+
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return
+      isLoading
+        ? Scaffold(
       appBar: AppBar(
         backgroundColor: kPrimaryColor,
         shadowColor: Colors.purple[200],
@@ -34,6 +80,23 @@ class _HomePageState extends State<HomePage> {
               fontSize: 24),
         ),
       ),
+      body: Center(
+        child: CircularProgressIndicator(),
+      ),
+    )
+        :Scaffold(
+      appBar: AppBar(
+        backgroundColor: kPrimaryColor,
+        shadowColor: Colors.purple[200],
+        elevation: 5.0,
+        title:  Text("Product by categories",
+          style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 24),
+        ),
+        ),
+
       drawer: Drawer(
 
         child: Column(
@@ -140,7 +203,54 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: Body()
+      body: Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(top: 15 , left: 10),
+            child: SizedBox(
+              height: 30,
+              child:  TabBar(
+                isScrollable: true,
+                unselectedLabelColor: Colors.black,
+                labelColor: kPrimaryColor,
+                tabs: choices
+                    .map(
+                      (e) => Tab(
+                    child: Text(
+                      e,
+                      style: TextStyle(
+                        //fontFamily: 'kanit',
+                         // color: kPrimaryColor,
+                      fontSize: 16),
+                    ),
+                  ),
+                )
+                    .toList(),
+                controller: _tabController,
+                indicator: BoxDecoration(
+                  color: kPrimaryLightColor,
+                  borderRadius: BorderRadius.circular(
+                    getProportionateScreenHeight(20.0),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 20,),
+          Expanded(
+              child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    ElectronicCategory(),
+                    JeweleryCategory(),
+                    MenCategory(),
+                    WomenCategory()
+                  ]
+              )
+          )
+        ],
+      )
+
     );
   }
 }
