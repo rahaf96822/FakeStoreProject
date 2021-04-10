@@ -3,7 +3,6 @@ import 'package:ecommerce/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-// import 'logIn.dart';
 
 class MyActivities extends StatefulWidget {
 @override
