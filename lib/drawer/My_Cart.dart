@@ -55,7 +55,7 @@ class _Screen9State extends State<Screen9> {
                       child: CircleAvatar(
                         backgroundColor: Colors.lightBlueAccent,
                         radius: 40,
-                        backgroundImage: AssetImage('images/check-circle.gif'),
+                        backgroundImage: AssetImage('assets/images/check-circle.gif'),
                         //Icon(Icons.question_answer, color: Colors.white, size: 30,),
                       )
                   ),
@@ -94,7 +94,7 @@ class _Screen9State extends State<Screen9> {
 
 
                     background: Container(
-                      color: Colors.purple[100],
+                      color: Colors.redAccent,
                       child: Padding(
                         padding: const EdgeInsets.all(15),
                         child: Row(
@@ -192,6 +192,7 @@ class _Screen9State extends State<Screen9> {
       ),
     );
 
-  }}
+  }
+}
 
 

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:ecommerce/drawer/favorite.dart';
 import 'package:get/get.dart';
 import 'package:ecommerce/drawer/MyActivities.dart';
 import 'package:ecommerce/drawer/MyPurchases.dart';
@@ -87,6 +88,15 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         :Scaffold(
       appBar: AppBar(
         backgroundColor: kPrimaryColor,
+        actions: [
+          IconButton(icon: Icon(Icons.add_shopping_cart,color: Colors.white),
+          onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Screen9()),
+            );
+          },)
+        ],
         shadowColor: Colors.purple[200],
         elevation: 5.0,
         title:  Text("Product by categories".tr,
@@ -137,6 +147,20 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Screen9()),
+                    );
+                  },
+                ),
+                ListTile(
+                  leading: Icon(Icons.favorite,color: kPrimaryColor),
+                  title: Text("Favorite".tr ,style: TextStyle (
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    //fontsize
+                  ),),
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Favorite()),
                     );
                   },
                 ),

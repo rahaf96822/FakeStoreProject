@@ -4,14 +4,14 @@ import 'package:ecommerce/utils/local_storage/local_storage.dart';
 
 
 class AppLanguage extends GetxController{
-  var appLocale = 'ar';
+  var appLocale = 'en';
    @override
   void onInit() async {
     // TODO: implement onInit
     super.onInit();
     LocalStorage localStorage = LocalStorage();
    appLocale = await localStorage.languageSelected == null ?
-   'ar' : await localStorage.languageSelected;
+   'en' : await localStorage.languageSelected;
     update();
    Get.updateLocale(Locale(appLocale));
 

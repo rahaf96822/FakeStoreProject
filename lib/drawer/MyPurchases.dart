@@ -28,8 +28,9 @@ class MyPurchases extends StatelessWidget {
             children: <Widget>[
               Card(
                 child: ListTile(
-                  leading: Icon(
-                    IconData(62538, fontFamily: 'MaterialIcons'),
+                  leading: IconButton(
+                    icon: Icon(Icons.shopping_cart),
+                    //IconData(62538, fontFamily: 'MaterialIcons'),
                     color: SecondColor,
                   ),
                   title: Text("Total:   100\$"),
@@ -41,11 +42,9 @@ class MyPurchases extends StatelessWidget {
               ),
               Card(
                 child: ListTile(
-                  leading: Icon(
-                    IconData(
-                      62538,
-                      fontFamily: 'MaterialIcons',
-                    ),
+                  leading:IconButton(
+                    icon: Icon(Icons.shopping_cart),
+                    //IconData(62538, fontFamily: 'MaterialIcons'),
                     color: SecondColor,
                   ),
                   title: Text('Total:   100\$'),
@@ -57,8 +56,9 @@ class MyPurchases extends StatelessWidget {
               ),
               Card(
                 child: ListTile(
-                  leading: Icon(
-                    IconData(62538, fontFamily: 'MaterialIcons'),
+                  leading: IconButton(
+                    icon: Icon(Icons.shopping_cart),
+                    //IconData(62538, fontFamily: 'MaterialIcons'),
                     color: SecondColor,
                   ),
                   title: Text('Total:   100\$'),
@@ -74,9 +74,12 @@ class MyPurchases extends StatelessWidget {
         floatingActionButton: new FloatingActionButton(
           backgroundColor: kPrimaryColor,
           onPressed: () {},
-          child: new Icon(IconData(
-            60269,
-          )),
+          child: new IconButton(
+            icon: Icon(Icons.auto_delete_sharp),
+          //     IconData(
+          //   60269,
+          // )
+          ),
         ));
   }
 }

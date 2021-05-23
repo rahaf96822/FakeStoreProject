@@ -45,17 +45,25 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                 init: AppLanguage(),
                 builder: (controller){
                   return
-                    DropdownButton(
-                    items: [
-                      DropdownMenuItem(child: Text('en') , value: 'en',),
-                      DropdownMenuItem(child: Text('ar') , value: 'ar',),
-                    ],
-                    value: controller.appLocale,
-                    onChanged: (value){
-                      controller.changeLanguage(value);
-                      Get.updateLocale(Locale(value));
-                    },
-                  );},
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text('Language' ,style: TextStyle(fontSize: 20, color: Colors.black , fontWeight: FontWeight.bold),),
+                        SizedBox(width: 20,),
+                        DropdownButton(
+                        items: [
+                          DropdownMenuItem(child: Text('English') , value: 'en',),
+                          DropdownMenuItem(child: Text('Arabic') , value: 'ar',),
+                        ],
+                        value: controller.appLocale,
+                        onChanged: (value){
+                          controller.changeLanguage(value);
+                          Get.updateLocale(Locale(value));
+                        },
+                  ),
+                      ],
+                    );},
               ),
             ),
           ],

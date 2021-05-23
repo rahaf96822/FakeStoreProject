@@ -36,7 +36,7 @@ class _Body1State extends State<Body1> {
     },
     {
       "text": "We show the easy way to shop. \nJust stay at home with us",
-      "image": "assets/images/welome_girl.png"
+      "image": "assets/images/welcome5.png"
     }
   ];
   @override

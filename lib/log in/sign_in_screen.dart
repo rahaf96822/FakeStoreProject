@@ -1,5 +1,5 @@
 import 'package:ecommerce/components/default_button.dart';
-import 'file:///C:/Users/lenovo%20l340/AndroidStudioProjects/ecommerce/lib/constants/constant.dart';
+import 'package:ecommerce/constants/constant.dart';
 import 'package:ecommerce/forget_password/forget_password_screen.dart';
 import 'package:ecommerce/home_screen/home_page.dart';
 import 'package:ecommerce/log%20in/form_error.dart';
@@ -145,6 +145,7 @@ class SignForm extends StatefulWidget {
 }
 
 class _SignFormState extends State<SignForm> {
+  bool _passwordVisible1 =  true;
   final _formKey = GlobalKey<FormState>();
   String email;
   String password;
@@ -260,7 +261,7 @@ class _SignFormState extends State<SignForm> {
 
   TextFormField buildPasswordFormField() {
     return TextFormField(
-      obscureText: true,
+      obscureText: _passwordVisible1,
       onSaved: (newValue) => password = newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
@@ -296,6 +297,16 @@ class _SignFormState extends State<SignForm> {
         prefixIcon: Icon(
           Icons.lock_outline,
           color: kPrimaryColor,
+        ),
+        suffixIcon: IconButton(
+          icon :Icon(_passwordVisible1 ? Icons.visibility_off : Icons.visibility , color: SecondColor,size: 16,),
+
+          onPressed: (){
+            setState(() {
+              _passwordVisible1 =!_passwordVisible1;
+            });
+          },
+
         ),
         labelStyle: TextStyle(fontSize: 15),
         focusedBorder: OutlineInputBorder(

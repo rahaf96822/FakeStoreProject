@@ -69,4 +69,5 @@ const Map<String , String > en ={
   "Address":"Address",
   "Enter your address":"Enter your address",
   "Email":"Email",
+  "Favorite" :"Favorite"
 };

@@ -70,4 +70,5 @@ const Map<String , String > ar ={
   "Address":"العنوان",
   "Enter your address":"أدخل عنوانك",
   "Email":"البريد الالكتروني",
+  "Favorite" : 'المفضلة'
 };

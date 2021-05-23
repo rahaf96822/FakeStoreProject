@@ -218,6 +218,8 @@ class SignForm extends StatefulWidget {
 }
 
 class _SignFormState extends State<SignForm> {
+  bool _passwordVisible1 =  true;
+  bool _passwordVisible2 =  true;
   final _formKey = GlobalKey<FormState>();
   String email;
   String password;
@@ -278,6 +280,7 @@ class _SignFormState extends State<SignForm> {
   }
   TextFormField buildEmailFormField() {
     return TextFormField(
+      obscureText: false,
       keyboardType: TextInputType.emailAddress,
       onSaved: (newValue) => email = newValue,
       onChanged: (value) {
@@ -326,7 +329,7 @@ class _SignFormState extends State<SignForm> {
   }
   TextFormField buildPasswordFormField() {
     return TextFormField(
-      obscureText: true,
+      obscureText: _passwordVisible2,
       onSaved: (newValue) => password = newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
@@ -364,6 +367,14 @@ class _SignFormState extends State<SignForm> {
           Icons.lock_outline,
           color: kPrimaryColor,
         ),
+          suffixIcon: IconButton(
+              icon :Icon(_passwordVisible2 ? Icons.visibility_off : Icons.visibility , color: SecondColor,size: 15,),
+
+              onPressed: (){
+                setState(() {
+                  _passwordVisible2 =!_passwordVisible2;
+                });
+              }),
         labelStyle: TextStyle(fontSize: 15),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: kTextColor),
@@ -375,7 +386,7 @@ class _SignFormState extends State<SignForm> {
   }
   TextFormField buildConfirmPasswordFormField() {
     return TextFormField(
-      obscureText: true,
+      obscureText: _passwordVisible1,
       onSaved: (newValue) => confirm_password = newValue,
       onChanged: (value) {
         if (password == confirm_password) {
@@ -409,6 +420,14 @@ class _SignFormState extends State<SignForm> {
           Icons.lock_outline,
           color: kPrimaryColor,
         ),
+        suffixIcon: IconButton(
+            icon :Icon(_passwordVisible1 ? Icons.visibility_off : Icons.visibility , color: SecondColor,size: 15,),
+
+            onPressed: (){
+              setState(() {
+                _passwordVisible1 =!_passwordVisible1;
+              });
+            }),
         labelStyle: TextStyle(fontSize: 15),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: kTextColor),
